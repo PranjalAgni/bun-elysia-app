@@ -5,8 +5,8 @@ import { rateLimit } from "elysia-rate-limit";
 const app = new Elysia()
   .use(
     rateLimit({
-      duration: 10000,
-      max: 3,
+      duration: 60000,
+      max: 10,
       responseMessage: "You have reached the limit, please try later",
     })
   )
@@ -102,6 +102,7 @@ const app = new Elysia()
       },
     }
   )
+  .get("/demo", () => "Hello tomorrow is demo (18th Thursday Jan, 2024)")
   .listen(3000);
 
 console.log(
