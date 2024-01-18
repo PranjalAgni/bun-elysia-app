@@ -103,6 +103,11 @@ const app = new Elysia()
     }
   )
   .get("/demo", () => "Hello tomorrow is demo (18th Thursday Jan, 2024)")
+  .get("/cold", () => ({
+    delhi: "5 degree celsius",
+    raebareli: "10 degree celsius",
+    shimla: "4 degree celsius",
+  }))
   .listen(3000);
 
 console.log(
